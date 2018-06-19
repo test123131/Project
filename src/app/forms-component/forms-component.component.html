@@ -1,0 +1,29 @@
+<h2>Add Your Event</h2>
+<div class="section-container">
+  <form>
+    <div>
+      <label for="eventId">Event Id</label>
+      <input type="text" name="eventId" [(ngModel)]="eventId" (blur)="validateEventId()" name="eventid" #eventid="ngModel" required>
+      <span *ngIf="eventid.invalid && (eventid.dirty || eventid.touched)">
+        <span *ngIf="eventid.errors.required"> Eventname Is Required</span>
+      </span>
+    </div>
+    <div>
+      <label for="eventName">Event Name</label>
+      <input type="text" name="eventName" [(ngModel)]="eventName" name="name" #name="ngModel" required>
+      <span *ngIf="name.invalid && (name.dirty || name.touched)">
+        <span *ngIf="name.errors.required"> Eventname Is Required</span> 
+      </span>
+    </div>
+    <div>
+      <label for="eventPlace">Event Place</label>
+      <input type="text" name="eventPlace" [(ngModel)]="eventPlace" name="eventplace" #eventplace="ngModel" required>
+      <span *ngIf="eventplace.invalid && (eventplace.dirty || eventplace.touched)">
+        <span *ngIf="eventplace.errors.required"> Eventplace Is Required</span> 
+      </span>
+    </div>
+    <div>
+      <button (click)="submit()">Submit</button>
+    </div>
+  </form>
+</div>

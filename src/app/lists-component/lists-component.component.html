@@ -1,0 +1,9 @@
+<div class="section-container" *ngIf="allItemsArray">
+  <div class="row" *ngFor="let item of allItemsArray">
+    <input type="text" [(ngModel)]="item.eventId">
+    <input type="text" [(ngModel)]="item.eventName">
+    <input type="text" [(ngModel)]="item.eventPlace">
+    <button (click)="update(item)">Update</button>
+  </div>
+
+</div>
